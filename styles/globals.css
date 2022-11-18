@@ -1,9 +1,10 @@
+@import url('https://fonts.cdnfonts.com/css/montserrat');
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Montserrat;
 }
 
 a {
@@ -15,12 +16,19 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.not-outline:focus {
+  outline: none
+}
+
+.anim-body {
+  animation: anim .5s linear;
+}
+
+@keyframes anim {
+  50% {
+    background: rgba(25, 160, 216, 0.28);
   }
-  body {
-    color: white;
-    background: black;
+  100% {
+    background: none;
   }
 }

@@ -1,0 +1,33 @@
+{
+  "input": 1,
+  "response": {
+    "name": 0,
+    "message": "",
+    "next": {
+      "name": 1,
+      "message": "",
+      "next": {
+        "name": 2,
+        "message": "",
+        "inlineButtons": [
+          {
+            "input": 11,
+            "response": {
+              "name": 1,
+              "message": "",
+              "inlineButtons": [
+                {
+                  "input": 111,
+                  "response": {
+                    "name": 1,
+                    "message": ""
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}
