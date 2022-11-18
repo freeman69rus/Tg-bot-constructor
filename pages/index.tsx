@@ -27,15 +27,17 @@ const branchButtonStyles = {
 }
 
 export default function Home() {
+    const [fetched, setFetched] = React.useState<boolean>(false)
     const [bots, setBots] = React.useState<IBotRow[]>([])
     const [botOpen, setBotOpen] = React.useState<boolean[]>([])
 
     const getBots = async () => {
         const res = await axios.get('api/get/all').catch(console.log)
         setBots(res?.data)
+        setFetched(true)
     }
 
-    if (!bots.length) getBots()
+    if (!fetched) getBots()
 
     const getStatusColor = (status: boolean) => {
         return status ? '#42FF00' : '#D6D6D6'
@@ -60,7 +62,7 @@ export default function Home() {
         if (result.data) getBots()
     }
 
-    if (!bots.length) return <>
+    if (!bots?.length) return <>
         <h1 style={{ marginBottom: '100px', fontSize: '2em', fontWeight: 500 }}>Боты</h1>
         <h1 style={{ color: '#ABABAB' }}>Пусто</h1>
     </>
