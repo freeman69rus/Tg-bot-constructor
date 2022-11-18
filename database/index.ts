@@ -1,11 +1,12 @@
 import { Database } from "sqlite3"
+import path from 'path'
 
 class DB extends Database {
-    private static exsisted: DB
+    private static instance: DB
 
     constructor() {
-        if (DB.exsisted) return DB.exsisted
-        super('./tgbc.db')
+        const dbPath = path.join(process.cwd(), '/database', '/tgbc.db')
+        super(dbPath)
         this.init()
     }
 
@@ -49,6 +50,13 @@ class DB extends Database {
             'CREATE TABLE IF NOT EXISTS bots ('+ fields +')'
         )
     }
+
+    static getInstance() {
+        if (!DB.instance) {
+            DB.instance = new DB()
+        }
+        return DB.instance
+    }
 }
 
-export default new DB()
+export default DB.getInstance()
