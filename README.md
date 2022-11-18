@@ -6,4 +6,4 @@ npm run dev
 yarn dev
 ```
 
-<img src="https://i.imgur.com/ennQG2x.gif" width="800" height="800x450" />
+<img src="https://i.imgur.com/ennQG2x.gif" width="800" height="450" />
